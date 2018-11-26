@@ -18,16 +18,16 @@ public class ServerPacket {
     public void setData(String data){
         this.data=data;
     }
-    public int getSequenceNumber(int sequenceNumber){
+    public int getSequenceNumber(){
         return this.sequenceNumber;
     }
-    public  int getdataTypeIndicator(int dataTypeIndicator){
+    public  int getdataTypeIndicator(){
         return this.dataTypeIndicator;
     }
-    public int getCheckSum(int checkSum) {
+    public int getCheckSum() {
        return this.checkSum;
     }
-    public String getData(String data){
+    public String getData(){
         return this.data;
     }
 }

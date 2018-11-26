@@ -7,5 +7,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Downloads/org.apache.commons.io.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$USER_HOME$/Downloads/org.apache.commons.io.jar" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="org.apache.commons.io.jar" level="application" />
   </component>
 </module>

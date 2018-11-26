@@ -2,10 +2,9 @@ package ClientHelpers;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
-import java.util.zip.Adler32;
-import java.util.zip.Checksum;
 
 public class ClientHelper {
+    //the method is used to convert the data to packet
     public static byte[] finalPacketFrames(byte[] data,int MSSSize,int sequenceNumber){
         byte[] finalPacket = new byte[data.length+8];
         byte[] checkSumByte = checksum(data);
@@ -15,10 +14,11 @@ public class ClientHelper {
         System.arraycopy(checkSumByte,0,finalPacket,4,2);
         System.arraycopy(dataTypeIndicator,0,finalPacket,6,2);
         System.arraycopy(data,0,finalPacket,8,data.length);
-        System.out.println(finalPacket);
-        System.out.println("finalPacketSize"+finalPacket.length);
+       /* System.out.println(finalPacket);
+        System.out.println("finalPacketSize"+finalPacket.length);*/
         return finalPacket;
     }
+    //this method is used to convert the entire data into equal sized MSS
     public static byte[][] chunkArray(byte[] array, int chunkSize) {
         int numOfChunks = (int)Math.ceil((double)array.length / chunkSize);
         byte[][] output = new byte[numOfChunks][];
@@ -31,7 +31,7 @@ public class ClientHelper {
         }
         return output;
     }
-
+    //used to calculate checksum
      public  static byte[] checksum(byte data[]) {
         int sum=0;
         int nob=0;
@@ -56,11 +56,12 @@ public class ClientHelper {
          checksumByte= totalSum.toByteArray();
     return checksumByte;
     }
+    //convert sequence number into byte sequence
     public static byte[] sequenceNumberBytes(int number)
     {
         return ByteBuffer.allocate(4).putInt(number).array();
     }
-
+    //convert dataTypeIndicator to byte sequence
     public static byte[] getDataTypeIndicatorByte(int number){
         BigInteger dataInt = BigInteger.valueOf(number);
         byte[] dataType =dataInt.toByteArray();
