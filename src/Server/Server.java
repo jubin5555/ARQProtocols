@@ -2,60 +2,63 @@ package Server;
 
 // Java program to illustrate Server side
 // Implementation using DatagramSocket
+import POJO.ServerPacket;
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
-
+import java.nio.ByteBuffer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 public class Server
 {
-    public static void main(String[] args) throws IOException
-    {
-        // Step 1 : Create a socket to listen at port 1234
-        DatagramSocket ds = new DatagramSocket(1234);
-        byte[] receive = new byte[65535];
 
-        DatagramPacket DpReceive = null;
-        while (true)
-        {
+    public static void receiveData(/*int portNumber, String fileName,int probablityPacketLoss*/) throws IOException {
 
-            // Step 2 : create a DatgramPacket to receive the data.
-            DpReceive = new DatagramPacket(receive, receive.length);
+        DatagramSocket ds = new DatagramSocket(7735);
+        byte[] b1 =new byte[1024];
+        String fileName="C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ServerFiles\\rfc1";
+        FileOutputStream writer = new FileOutputStream(fileName);
+        writer.write(("").getBytes());
+        writer.close();
 
-            // Step 3 : revieve the data in byte buffer.
-            ds.receive(DpReceive);
-
-            System.out.println("Client:-" + data(receive));
-
-            // Exit the server if the client sends "bye"
-            if (data(receive).toString().equals("bye"))
-            {
-                System.out.println("Client sent bye.....EXITING");
-                break;
-            }
-
-            // Clear the buffer after every message.
-            receive = new byte[65535];
+        while(true) {
+            DatagramPacket dp = new DatagramPacket(b1, b1.length);
+            ds.receive(dp);
+            ServerPacket currentPacket = ServerHelper.decipherPacket(b1);
+            int sequenceNumber =currentPacket.getSequenceNumber();
+            BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
+            out.write(currentPacket.getData().trim());
+            out.close();
+            byte[] acknowledgmentNumberBytes= ServerHelper.getAcknowledgmentNumber(sequenceNumber);
+            DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, InetAddress.getLocalHost(),dp.getPort());
+            ds.send(dp2);
         }
     }
+    public static void main(String[] args) throws IOException {
+       /* int portNumber;
+        String fileName;
+        int probability;
+        if(args.length!=3){
+            System.out.println("The total number of arguments required are 2");
+            System.out.println("The arguments are portNumber,fileName and probability for packet loss");
+        }*/
+       /* else{
+            portNumber=Integer.parseInt(args[0]);
+            fileName =args[1];
+            probability =Integer.parseInt(args[2])
+            */
+            receiveData(/*portNumber,fileName*/);
 
-    // A utility method to convert the byte array
-    // data into a string representation.
-    public static StringBuilder data(byte[] a)
-    {
-        if (a == null)
-            return null;
-        StringBuilder ret = new StringBuilder();
-        int i = 0;
-        while (a[i] != 0)
-        {
-            ret.append((char) a[i]);
-            i++;
-        }
-        return ret;
+        /*}*/
+
     }
 }
 
