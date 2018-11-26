@@ -1,6 +1,9 @@
+package Server;
+
 import POJO.ServerPacket;
 
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
 
 public class ServerHelper {
     //this function is used to convert the byte array into the format :-
@@ -25,8 +28,9 @@ public class ServerHelper {
         int checkSumDecimal =new BigInteger(checkSum).intValue();
         int sequenceNumberDecimal =new BigInteger(sequenceBytes).intValue();
         int dataTypeIndicatorDecimal =new BigInteger(dataType).intValue();
-        String dataString = new String(extractedData);
+        String dataString = new String(extractedData,0,extractedData.length);
 
+        System.out.println("Inside the ServerHelper :" +dataString);
         ServerPacket serverPacket = new ServerPacket();
         serverPacket.setCheckSum(checkSumDecimal);
         serverPacket.setSequenceNumber(sequenceNumberDecimal);
@@ -34,5 +38,11 @@ public class ServerHelper {
         serverPacket.setData(dataString);
         return serverPacket;
 
+    }
+    //the function is used to convert the integer sequence number into bytes[] of acknowledgment number
+    public static byte[] getAcknowledgmentNumber(int sequenceNumber) {
+        int ackNumber =sequenceNumber+1;
+        byte[] ackNumberByte = ByteBuffer.allocate(4).putInt(ackNumber).array();
+        return ackNumberByte;
     }
 }
