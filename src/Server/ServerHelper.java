@@ -4,6 +4,7 @@ import POJO.ServerPacket;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
+import java.util.Random;
 
 public class ServerHelper {
     //this function is used to convert the byte array into the format :-
@@ -44,5 +45,14 @@ public class ServerHelper {
         int ackNumber =sequenceNumber+1;
         byte[] ackNumberByte = ByteBuffer.allocate(4).putInt(ackNumber).array();
         return ackNumberByte;
+    }
+    //the function is used to check if the current packet should be dropped.
+    //Return true -->drop packet
+    //Return false -->Dont drop packet
+    public static Boolean dropPacket(double probability ){
+        Random generator = new Random();
+        double number = generator.nextDouble() * .06;
+        if(number<=probability){return Boolean.TRUE;}
+        return Boolean.FALSE;
     }
 }
