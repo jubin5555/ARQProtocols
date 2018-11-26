@@ -1,7 +1,5 @@
 package Server;
 
-// Java program to illustrate Server side
-// Implementation using DatagramSocket
 import POJO.ServerPacket;
 
 import java.io.BufferedWriter;
@@ -11,18 +9,13 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.nio.ByteBuffer;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 
 public class Server
 {
+public static Integer CURRENTSEQUENCENUMBER=0;
+    public static void receiveData(int portNumber, String file,double probablityPacketLoss) throws IOException {
 
-    public static void receiveData(/*int portNumber, String fileName,int probablityPacketLoss*/) throws IOException {
-
-        DatagramSocket ds = new DatagramSocket(7735);
+        DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
         String fileName="C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ServerFiles\\rfc1";
         FileOutputStream writer = new FileOutputStream(fileName);
@@ -34,30 +27,33 @@ public class Server
             ds.receive(dp);
             ServerPacket currentPacket = ServerHelper.decipherPacket(b1);
             int sequenceNumber =currentPacket.getSequenceNumber();
-            BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
-            out.write(currentPacket.getData().trim());
-            out.close();
-            byte[] acknowledgmentNumberBytes= ServerHelper.getAcknowledgmentNumber(sequenceNumber);
-            DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, InetAddress.getLocalHost(),dp.getPort());
-            ds.send(dp2);
+            //check if the correct packet is received or else dont send an acknowledgment
+            if(sequenceNumber==CURRENTSEQUENCENUMBER && ServerHelper.dropPacket(probablityPacketLoss).equals(Boolean.FALSE)) {
+                BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
+                out.write(currentPacket.getData().trim());
+                out.close();
+                byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(sequenceNumber);
+                DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, InetAddress.getLocalHost(), dp.getPort());
+                ds.send(dp2);
+                CURRENTSEQUENCENUMBER++;
+            }
         }
     }
     public static void main(String[] args) throws IOException {
-       /* int portNumber;
+        int portNumber;
         String fileName;
-        int probability;
+        double probability;
         if(args.length!=3){
             System.out.println("The total number of arguments required are 2");
             System.out.println("The arguments are portNumber,fileName and probability for packet loss");
-        }*/
-       /* else{
+        }
+        else{
             portNumber=Integer.parseInt(args[0]);
             fileName =args[1];
-            probability =Integer.parseInt(args[2])
-            */
-            receiveData(/*portNumber,fileName*/);
+            probability = Double.parseDouble(args[2]);
+            receiveData(portNumber,fileName,probability);
 
-        /*}*/
+        }
 
     }
 }
