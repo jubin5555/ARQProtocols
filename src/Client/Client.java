@@ -10,41 +10,52 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
-
 import static ClientHelpers.ClientHelper.*;
-
 
 public class Client
 {
-    public static void sendPacketToServer(/*String hostName,int serverPort,String fileName,int windowSize,int MSS*/) throws IOException, InterruptedException {
-        while(true) {
-            Path path = Paths.get("C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ClientFiles\\SampleTextFile_1000kb.txt");
-            byte[] byteArray = Files.readAllBytes(path);
-            /*System.out.println(byteArray);*/
-            byte[][] byteArray2;
-            InetAddress serverAdress = InetAddress.getLocalHost();
-            byteArray2 = chunkArray(byteArray, 100);
-            DatagramSocket ds = new DatagramSocket();
-            for (int i = 0; i < byteArray2.length; i++) {
-                byte[] udpPacket = finalPacketFrames(byteArray2[i], 100, i);
-                DatagramPacket dp = new DatagramPacket(udpPacket, udpPacket.length, serverAdress, 7735);
-                ds.send(dp);
-                TimeUnit.SECONDS.sleep(1);
-               /* System.out.println(udpPacket.length);*/
-                byte[] sequenceNumberBytes = new byte[4];
-                DatagramPacket receivedDatagram = new DatagramPacket(sequenceNumberBytes,sequenceNumberBytes.length);
-                ds.receive(receivedDatagram);
-                int sequenceNumber =new BigInteger(sequenceNumberBytes).intValue();
-                System.out.println("Sequence Number : "+sequenceNumber);
-            }
-
-
-
+    //the last packet which was received
+    public static int CURRENTACKNOWLEDGEDPACKETNUMBER;
+    //a pointer to the beginning of the window
+    public static int CURRENTWINDOWPOINTER=0;
+  /*  //a global socket to send and receive data
+    //TODO : Make a singleton class for the socket to avoid multiple instances*/
+    public static DatagramSocket ds;
+    public static void sendPacketToServer(String hostName,int serverPort,String fileName,
+                                          int windowSize,int MSS) throws IOException, InterruptedException {
+        Path path = Paths.get("C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ClientFiles\\SampleTextFile_1000kb.txt");
+        byte[] byteArray = Files.readAllBytes(path);
+        byte[][] byteArray2=chunkArray(byteArray, MSS);
+        InetAddress serverAdress = InetAddress.getLocalHost();
+        while (CURRENTWINDOWPOINTER <= byteArray2.length - 1) {
+            goBackNProtocol(CURRENTWINDOWPOINTER,windowSize,byteArray2,ds,MSS,serverAdress,serverPort);
+            TimeUnit.MILLISECONDS.sleep(50);
+            if(CURRENTACKNOWLEDGEDPACKETNUMBER>CURRENTWINDOWPOINTER) {
+              printInfoLostPackets(CURRENTACKNOWLEDGEDPACKETNUMBER, CURRENTWINDOWPOINTER + windowSize);
+              CURRENTWINDOWPOINTER = CURRENTACKNOWLEDGEDPACKETNUMBER;
+          }
         }
     }
-
+    //A seperate thread to receive packets on the same socket
+    public static  class receivePacket extends Thread {
+        public void run(){
+                try {
+                   ds= new DatagramSocket();
+                   while(true) {
+                       byte[] sequenceNumberBytes = new byte[4];
+                       DatagramPacket receivedDatagram = new DatagramPacket(sequenceNumberBytes, sequenceNumberBytes.length);
+                       ds.receive(receivedDatagram);
+                       CURRENTACKNOWLEDGEDPACKETNUMBER = Math.max(new BigInteger(sequenceNumberBytes).intValue(), CURRENTACKNOWLEDGEDPACKETNUMBER);
+                       System.out.println(new BigInteger(sequenceNumberBytes).intValue() + ": Received number");
+                       System.out.println(CURRENTACKNOWLEDGEDPACKETNUMBER + ": CurrentAckNumber");
+                   }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+    }
     public static void main(String args[]) throws IOException, InterruptedException {
-      /*  String serverHostName;
+        String serverHostName;
         int serverPortNumber;
         String fileName;
         int windowSize;
@@ -54,15 +65,17 @@ public class Client
             serverPortNumber=Integer.parseInt(args[1]);
             fileName=args[2];
             windowSize =Integer.parseInt(args[3]);
-            maximumSegmentSize=Integer.parseInt(args[4]);*/
-            sendPacketToServer(/*serverHostName,serverPortNumber,fileName,windowSize,maximumSegmentSize*/);
-
-       /* }
+            maximumSegmentSize=Integer.parseInt(args[4]);
+            new receivePacket().start();
+            System.out.println("besides receiving thread");
+            sendPacketToServer(serverHostName,serverPortNumber,fileName,windowSize,maximumSegmentSize);
+        }
         else{
             System.out.println("Missing Command Line Arguments");
             System.out.println("The arguments should be ServerHostName,ServerPort,Filename,Window Size,Maximum Segment Size.");
-        }*/
+        }
     }
 
 }
+
 
