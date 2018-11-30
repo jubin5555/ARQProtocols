@@ -21,9 +21,9 @@ public class ServerHelper {
         System.arraycopy(data,6,dataType,0,2);
         System.arraycopy(data,8,extractedData,0,data.length-8);
 
-        System.out.println("sequence Number : "+new BigInteger(sequenceBytes).intValue());
+        /*System.out.println("sequence Number : "+new BigInteger(sequenceBytes).intValue());
         System.out.println("checkSum : "+new BigInteger(checkSum).intValue());
-        System.out.println("datatype : "+new BigInteger(dataType).intValue());
+        System.out.println("datatype : "+new BigInteger(dataType).intValue());*/
 
 
         int checkSumDecimal =new BigInteger(checkSum).intValue();
@@ -31,7 +31,7 @@ public class ServerHelper {
         int dataTypeIndicatorDecimal =new BigInteger(dataType).intValue();
         String dataString = new String(extractedData,0,extractedData.length);
 
-        System.out.println("Inside the ServerHelper :" +dataString);
+        /*System.out.println("Inside the ServerHelper :" +dataString);*/
         ServerPacket serverPacket = new ServerPacket();
         serverPacket.setCheckSum(checkSumDecimal);
         serverPacket.setSequenceNumber(sequenceNumberDecimal);
@@ -51,7 +51,8 @@ public class ServerHelper {
     //Return false -->Dont drop packet
     public static Boolean dropPacket(double probability ){
         Random generator = new Random();
-        double number = generator.nextDouble() * .06;
+        double number = generator.nextDouble() ;
+        //System.out.println("Number "+number);
         if(number<=probability){return Boolean.TRUE;}
         return Boolean.FALSE;
     }

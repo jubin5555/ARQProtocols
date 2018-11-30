@@ -9,11 +9,14 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.concurrent.TimeUnit;
 
 public class Server
 {
 public static Integer CURRENTSEQUENCENUMBER=0;
-    public static void receiveData(int portNumber, String file,double probablityPacketLoss) throws IOException {
+public static Integer TOTALPACKETLOSSCOUNT=0;
+
+    public static void receiveData(int portNumber, String file,double probabilityPacketLoss) throws IOException, InterruptedException {
 
         DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
@@ -28,18 +31,26 @@ public static Integer CURRENTSEQUENCENUMBER=0;
             ServerPacket currentPacket = ServerHelper.decipherPacket(b1);
             int sequenceNumber =currentPacket.getSequenceNumber();
             //check if the correct packet is received or else dont send an acknowledgment
-            if(sequenceNumber==CURRENTSEQUENCENUMBER && ServerHelper.dropPacket(probablityPacketLoss).equals(Boolean.FALSE)) {
+            System.out.println(CURRENTSEQUENCENUMBER + "CurrentEquencenumber");
+            System.out.println(sequenceNumber+"received sequencenumber");
+            if(sequenceNumber==CURRENTSEQUENCENUMBER && ServerHelper.dropPacket(probabilityPacketLoss).equals(Boolean.FALSE)) {
                 BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
                 out.write(currentPacket.getData().trim());
                 out.close();
-                byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(sequenceNumber);
+                byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(CURRENTSEQUENCENUMBER);
                 DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, InetAddress.getLocalHost(), dp.getPort());
+                TimeUnit.MILLISECONDS.sleep(10);
                 ds.send(dp2);
                 CURRENTSEQUENCENUMBER++;
             }
+            else{
+               System.out.println("Packet loss, sequence number:" +CURRENTSEQUENCENUMBER );
+                TOTALPACKETLOSSCOUNT=TOTALPACKETLOSSCOUNT+1;
+                System.out.println("TotalPacketLoss: "+ TOTALPACKETLOSSCOUNT);
+            }
         }
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         int portNumber;
         String fileName;
         double probability;

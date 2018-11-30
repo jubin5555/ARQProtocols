@@ -26,10 +26,10 @@ public class Client
         Path path = Paths.get("C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ClientFiles\\SampleTextFile_1000kb.txt");
         byte[] byteArray = Files.readAllBytes(path);
         byte[][] byteArray2=chunkArray(byteArray, MSS);
-        InetAddress serverAdress = InetAddress.getLocalHost();
+        InetAddress serverAdress = InetAddress.getByName("192.168.0.14");
         while (CURRENTWINDOWPOINTER <= byteArray2.length - 1) {
             goBackNProtocol(CURRENTWINDOWPOINTER,windowSize,byteArray2,ds,MSS,serverAdress,serverPort);
-            TimeUnit.MILLISECONDS.sleep(50);
+            TimeUnit.MILLISECONDS.sleep(25);
             if(CURRENTACKNOWLEDGEDPACKETNUMBER>CURRENTWINDOWPOINTER) {
               printInfoLostPackets(CURRENTACKNOWLEDGEDPACKETNUMBER, CURRENTWINDOWPOINTER + windowSize);
               CURRENTWINDOWPOINTER = CURRENTACKNOWLEDGEDPACKETNUMBER;

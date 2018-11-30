@@ -1,7 +1,12 @@
 package ClientHelpers;
 
+import java.io.IOException;
 import java.math.BigInteger;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.nio.ByteBuffer;
+import java.util.concurrent.TimeUnit;
 
 public class ClientHelper {
     //the method is used to convert the data to packet
@@ -34,10 +39,10 @@ public class ClientHelper {
     //used to calculate checksum
      public  static byte[] checksum(byte data[]) {
         int sum=0;
-        int nob=0;
+        int nob;
          BigInteger totalSum ;
          byte[] checksumByte= new byte[2];
-        int[] c_data= new int[100];
+        int[] c_data= new int[2000];
          for(int i=0;i<data.length;i++){
 
          // Complementing the entered data
@@ -68,5 +73,36 @@ public class ClientHelper {
         return dataType;
     }
 
+    //maintain the goBackNProtocol
+    public static void goBackNProtocol(int sendingWindowPointer, int windowSize, byte[][] dataArray, DatagramSocket ds,
+                                       int MSS, InetAddress serverAdress,int serverPort) throws IOException, InterruptedException {
+        int endOfWindow;
+        if(sendingWindowPointer+windowSize>=dataArray.length-1){
+            endOfWindow=dataArray.length-1;
+        }
+        else{
+            endOfWindow=sendingWindowPointer+windowSize;
+        }
+        for(int i=sendingWindowPointer;i<=endOfWindow;i++)
+        {
+            byte[] udpPacket = finalPacketFrames(dataArray[i],MSS , i);
+            DatagramPacket dp = new DatagramPacket(udpPacket, udpPacket.length, serverAdress, serverPort);
+            TimeUnit.MILLISECONDS.sleep(2);
+            ds.send(dp);
+        }
+
     }
 
+    //to print the information about the packets which were not received after the timeout.
+    public static void printInfoLostPackets(int currentAckPointer,int lastPacketSend){
+        for(int i=currentAckPointer;i<lastPacketSend;i++)
+        {
+            System.out.println("Timeout,Sequence Number : "+i);
+        }
+
+    }
+
+    }
+
+//https://gist.github.com/lesleh/7724554
+//this repository has been used to split the data into chunks of data array
