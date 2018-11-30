@@ -17,7 +17,6 @@
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/sbt.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/Client$receivePacket.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.xml" afterDir="false" />
@@ -35,16 +34,7 @@
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/play2_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/ClientHelpers/ClientHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/ClientHelpers/ClientHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Server/ServerHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Server/ServerHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ServerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerFiles/rfc1" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFiles/rfc1" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,13 +68,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9386" />
+          <entry key="java" value="9389" />
           <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9386" />
+          <entry key="JAVA" value="9389" />
           <entry key="PLAIN_TEXT" value="25" />
         </counts>
       </usages-collector>
@@ -92,11 +82,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="33" column="98" selection-start-line="33" selection-start-column="98" selection-end-line="33" selection-end-column="98" />
+            <state relative-caret-position="424">
+              <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            <state relative-caret-position="288">
+              <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,6 +142,7 @@
     <findStrings>
       <find>receivingThread</find>
       <find>TOTALPACKETLOSSCOUNT</find>
+      <find>serverAdress</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\jajubina\Desktop\SOCProject5\project\CSC573P2\src\ServerFiles</dir>
@@ -167,10 +158,10 @@
         <option value="$PROJECT_DIR$/src/POJO/ServerPacket.java" />
         <option value="$PROJECT_DIR$/src/ServerFiles/rfc1" />
         <option value="$PROJECT_DIR$/src/ClientFiles/SampleTextFile_1000kb.txt" />
-        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerHelper.java" />
         <option value="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" />
         <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Server/Server.java" />
       </list>
     </option>
   </component>
@@ -211,7 +202,7 @@
     <property name="SearchEverywhereHistoryKey" value="TOTALPACKETLOSSCOUNT&#9;PSI&#9;JAVA://Server.Server#TOTALPACKETLOSSCOUNT" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543542750369" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543543120110" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/org.apache.commons.io.jar.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -289,15 +280,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543036048837</updated>
-      <workItem from="1543036052597" duration="62907000" />
+      <workItem from="1543036052597" duration="63423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62907000" />
+    <option name="totallyTimeSpent" value="63423000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
@@ -475,20 +467,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        <state relative-caret-position="424">
+          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="33" column="98" selection-start-line="33" selection-start-column="98" selection-end-line="33" selection-end-column="98" />
+        <state relative-caret-position="288">
+          <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
