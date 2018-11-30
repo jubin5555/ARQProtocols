@@ -29,7 +29,7 @@ public class Client
         InetAddress serverAdress = InetAddress.getByName("192.168.0.14");
         while (CURRENTWINDOWPOINTER <= byteArray2.length - 1) {
             goBackNProtocol(CURRENTWINDOWPOINTER,windowSize,byteArray2,ds,MSS,serverAdress,serverPort);
-            TimeUnit.MILLISECONDS.sleep(25);
+            TimeUnit.MILLISECONDS.sleep(500);
             if(CURRENTACKNOWLEDGEDPACKETNUMBER>CURRENTWINDOWPOINTER) {
               printInfoLostPackets(CURRENTACKNOWLEDGEDPACKETNUMBER, CURRENTWINDOWPOINTER + windowSize);
               CURRENTWINDOWPOINTER = CURRENTACKNOWLEDGEDPACKETNUMBER;

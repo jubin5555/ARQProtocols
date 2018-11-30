@@ -87,7 +87,7 @@ public class ClientHelper {
         {
             byte[] udpPacket = finalPacketFrames(dataArray[i],MSS , i);
             DatagramPacket dp = new DatagramPacket(udpPacket, udpPacket.length, serverAdress, serverPort);
-            TimeUnit.MILLISECONDS.sleep(2);
+            TimeUnit.MILLISECONDS.sleep(50);
             ds.send(dp);
         }
 

@@ -39,7 +39,7 @@ public static Integer TOTALPACKETLOSSCOUNT=0;
                 out.close();
                 byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(CURRENTSEQUENCENUMBER);
                 DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, dp.getAddress(), dp.getPort());
-                TimeUnit.MILLISECONDS.sleep(10);
+                TimeUnit.MILLISECONDS.sleep(25);
                 ds.send(dp2);
                 CURRENTSEQUENCENUMBER++;
             }
