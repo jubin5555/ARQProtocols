@@ -9,12 +9,14 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class Server
 {
 public static Integer CURRENTSEQUENCENUMBER=0;
 public static Integer TOTALPACKETLOSSCOUNT=0;
+
 
     public static void receiveData(int portNumber, String file,double probabilityPacketLoss) throws IOException, InterruptedException {
 
@@ -39,7 +41,7 @@ public static Integer TOTALPACKETLOSSCOUNT=0;
                 out.close();
                 byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(CURRENTSEQUENCENUMBER);
                 DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, dp.getAddress(), dp.getPort());
-                TimeUnit.MILLISECONDS.sleep(25);
+                TimeUnit.MILLISECONDS.sleep(50);
                 ds.send(dp2);
                 CURRENTSEQUENCENUMBER++;
             }

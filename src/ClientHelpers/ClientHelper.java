@@ -1,5 +1,7 @@
 package ClientHelpers;
 
+import Client.Client;
+
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.DatagramPacket;
@@ -7,6 +9,10 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
+
+import static Client.Client.CURRENTACKNOWLEDGEDSTATUS;
+import static Client.Client.CURRENTWINDOWPOINTER;
+import static Client.Client.PACKETSENDTIME;
 
 public class ClientHelper {
     //the method is used to convert the data to packet
@@ -89,6 +95,13 @@ public class ClientHelper {
             DatagramPacket dp = new DatagramPacket(udpPacket, udpPacket.length, serverAdress, serverPort);
             TimeUnit.MILLISECONDS.sleep(50);
             ds.send(dp);
+            PACKETSENDTIME.put(System.currentTimeMillis()+400,i);
+            if(Client.CURRENTACKNOWLEDGEDSTATUS.equals(Boolean.FALSE))
+            {
+                printInfoLostPackets(i, CURRENTWINDOWPOINTER + windowSize);
+                CURRENTACKNOWLEDGEDSTATUS=Boolean.TRUE;
+                break;
+            }
         }
 
     }
