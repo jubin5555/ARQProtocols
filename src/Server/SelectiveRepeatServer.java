@@ -39,16 +39,23 @@ public class SelectiveRepeatServer
             //check if the correct packet is received or else dont send an acknowledgment
 
             System.out.println(sequenceNumber+"received sequencenumber");
-            if(sequenceNumber<=expectedWindowSize && ServerHelper.dropPacket(probabilityPacketLoss).equals(Boolean.FALSE)) {
+            System.out.println(expectedWindowSize + "expected Window Size.");
+            if(sequenceNumber<expectedWindowSize && ServerHelper.dropPacket(probabilityPacketLoss).equals(Boolean.FALSE)) {
                 byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(sequenceNumber);
-                DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, dp.getAddress(), dp.getPort());
+                DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length,
+                        dp.getAddress(), dp.getPort());
                 TimeUnit.MILLISECONDS.sleep(50);
                 ds.send(dp2);
                 currentWindowData.put(sequenceNumber,currentPacket);
-                if(currentWindowData.size()==windowSize){writeToFile();}
+                System.out.println("currentWindowdata" + currentWindowData.size() +"window Size: "+ windowSize);
+                if(currentWindowData.size()>=windowSize){
+                    System.out.println("Inside if loop");
+                    writeToFile();
+                }
             }
             else{
                 System.out.println("Packet loss, sequence number:" +sequenceNumber );
+                expectedWindowSize=expectedWindowSize+windowSize;
                 TOTALPACKETLOSSCOUNT=TOTALPACKETLOSSCOUNT+1;
                 System.out.println("TotalPacketLoss: "+ TOTALPACKETLOSSCOUNT);
             }
@@ -58,12 +65,13 @@ public class SelectiveRepeatServer
     public static void writeToFile() throws IOException {
         BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
      for(Integer iterator:currentWindowData.keySet()) {
+
          out.write(currentWindowData.get(iterator).getData().trim());
          out.flush();
      }
         out.close();
         currentWindowData.clear();
-        expectedWindowSize=expectedWindowSize+windowSize;
+
     }
     public static void main(String[] args) throws IOException, InterruptedException {
         int portNumber;
