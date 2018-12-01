@@ -12,7 +12,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static ClientHelpers.ClientHelper.*;
+import static ClientHelpers.ClientHelper.chunkArray;
+import static ClientHelpers.ClientHelper.goBackNProtocol;
 
 public class Client
 {
@@ -77,6 +78,7 @@ public class Client
         }
     }
     public static void main(String args[]) throws IOException, InterruptedException {
+        long startTime = System.currentTimeMillis();
         String serverHostName;
         int serverPortNumber;
         String fileName;
@@ -97,6 +99,9 @@ public class Client
             System.out.println("Missing Command Line Arguments");
             System.out.println("The arguments should be ServerHostName,ServerPort,Filename,Window Size,Maximum Segment Size.");
         }
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Total time in minutes : "+TimeUnit.MILLISECONDS.toMinutes(totalTime));
     }
 
 }

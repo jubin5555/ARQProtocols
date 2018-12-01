@@ -53,7 +53,10 @@ public class ServerHelper {
         Random generator = new Random();
         double number = generator.nextDouble() ;
         //System.out.println("Number "+number);
-        if(number<=probability){return Boolean.TRUE;}
+        if(number<=probability){
+            System.out.println("true");
+            return Boolean.TRUE;}
+            System.out.println("false");
         return Boolean.FALSE;
     }
 }

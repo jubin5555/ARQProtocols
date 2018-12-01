@@ -10,9 +10,9 @@ import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
 
-import static Client.Client.CURRENTACKNOWLEDGEDSTATUS;
-import static Client.Client.CURRENTWINDOWPOINTER;
-import static Client.Client.PACKETSENDTIME;
+import static Client.Client.*;
+import static Client.SelectiveRepeatClient.SRRPACKETSENDTIME;
+
 
 public class ClientHelper {
     //the method is used to convert the data to packet
@@ -102,6 +102,25 @@ public class ClientHelper {
                 CURRENTACKNOWLEDGEDSTATUS=Boolean.TRUE;
                 break;
             }
+        }
+
+    }
+    public static void selectiveRepeatRequest(int sendingWindowPointer, int windowSize, byte[][] dataArray, DatagramSocket ds,
+                                       int MSS, InetAddress serverAdress,int serverPort) throws IOException, InterruptedException {
+        int endOfWindow;
+        if(sendingWindowPointer+windowSize>=dataArray.length-1){
+            endOfWindow=dataArray.length-1;
+        }
+        else{
+            endOfWindow=sendingWindowPointer+windowSize;
+        }
+        for(int i=sendingWindowPointer;i<endOfWindow;i++)
+        {
+            byte[] udpPacket = finalPacketFrames(dataArray[i],MSS , i);
+            DatagramPacket dp = new DatagramPacket(udpPacket, udpPacket.length, serverAdress, serverPort);
+            TimeUnit.MILLISECONDS.sleep(50);
+            ds.send(dp);
+            SRRPACKETSENDTIME.put(System.currentTimeMillis()+400,i);
         }
 
     }

@@ -17,6 +17,8 @@
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/sbt.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.xml" afterDir="false" />
@@ -33,9 +35,11 @@
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/play2_project_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/play2_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ServerHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerFiles/rfc1" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFiles/rfc1" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -57,28 +61,28 @@
         <counts>
           <entry key="class" value="5" />
           <entry key="iml" value="1" />
-          <entry key="java" value="15" />
-          <entry key="rfc1" value="14" />
-          <entry key="txt" value="1" />
+          <entry key="java" value="19" />
+          <entry key="rfc1" value="22" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="5" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="15" />
-          <entry key="PLAIN_TEXT" value="15" />
+          <entry key="JAVA" value="19" />
+          <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9868" />
+          <entry key="java" value="12670" />
           <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9868" />
+          <entry key="JAVA" value="12670" />
           <entry key="PLAIN_TEXT" value="25" />
         </counts>
       </usages-collector>
@@ -87,13 +91,25 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+        <entry file="file://$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="53" column="15" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="107" />
+            <state relative-caret-position="1564">
+              <caret line="92" selection-start-line="92" selection-end-line="93" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#722#737#0" expanded="true" />
+                <element signature="e#607#622#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+            <state relative-caret-position="-71">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="25" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,10 +128,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/POJO/ServerPacket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+              <folding>
+                <element signature="e#215#216#0" expanded="true" />
+                <element signature="e#265#266#0" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#428#429#0" expanded="true" />
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#534#535#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+            <state relative-caret-position="980">
+              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,8 +160,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
+            <state relative-caret-position="187">
+              <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,7 +194,20 @@
     <findStrings>
       <find>receivingThread</find>
       <find>serverAdress</find>
+      <find>serverAd</find>
+      <find>windowSize</find>
+      <find>PACKETSENDTIME</find>
+      <find>probabilityPacketLoss</find>
+      <find>CURRENTWINDOWPOINTER</find>
+      <find>out</find>
+      <find>fileName</find>
       <find>TOTALPACKETLOSSCOUNT</find>
+      <find>selectiveRepeatRequest</find>
+      <find>CURRENTACKNOWLEDGEDPACKETNUMBER</find>
+      <find>tempWindowPointer</find>
+      <find>currentWindowData</find>
+      <find>windowFilled</find>
+      <find>ACKNOWLEDGEDPACKETLIST</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\jajubina\Desktop\SOCProject5\project\CSC573P2\src\ServerFiles</dir>
@@ -164,10 +223,13 @@
         <option value="$PROJECT_DIR$/src/POJO/ServerPacket.java" />
         <option value="$PROJECT_DIR$/src/ServerFiles/rfc1" />
         <option value="$PROJECT_DIR$/src/ClientFiles/SampleTextFile_1000kb.txt" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerHelper.java" />
+        <option value="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" />
+        <option value="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" />
         <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" />
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
+        <option value="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" />
       </list>
     </option>
   </component>
@@ -200,13 +262,81 @@
             <path>
               <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="ClientFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="ServerFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ClientFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="POJO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
@@ -222,10 +352,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="TOTALPACKETLOSSCOUNT&#9;PSI&#9;JAVA://Server.Server#TOTALPACKETLOSSCOUNT" />
+    <property name="SearchEverywhereHistoryKey" value="selectiveRepeatRequest&#9;PSI&#9;JAVA://ClientHelpers.ClientHelper#selectiveRepeatRequest&#10;getData&#9;PSI&#9;JAVA://POJO.ServerPacket#getData&#10;TOTALPACKETLOSSCOUNT&#9;PSI&#9;JAVA://Server.Server#TOTALPACKETLOSSCOUNT" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543597749177" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543630020219" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/org.apache.commons.io.jar.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -303,12 +433,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543036048837</updated>
-      <workItem from="1543036052597" duration="74937000" />
+      <workItem from="1543036052597" duration="94771000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74937000" />
+    <option name="totallyTimeSpent" value="94771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -323,8 +453,8 @@
       <window_info anchor="bottom" id="Messages" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49932885" visible="true" weight="0.7829787" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50067115" side_tool="true" weight="0.30780143" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49932885" visible="true" weight="0.3134752" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50067115" side_tool="true" weight="0.50496453" />
       <window_info anchor="bottom" id="SBT Console" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
@@ -414,42 +544,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/POJO/ServerPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding>
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#779#780#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/Client/Client.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="95" selection-start-line="2" selection-start-column="95" selection-end-line="2" selection-end-column="95" />
         </state>
       </provider>
     </entry>
@@ -463,30 +561,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServerFiles/rfc1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="2" column="113" lean-forward="true" selection-start-line="2" selection-start-column="113" selection-end-line="2" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSC573P2.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ServerHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        <state relative-caret-position="444">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ClientFiles/SampleTextFile_1000kb.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/POJO/ServerPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state relative-caret-position="-71">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerFiles/rfc1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4845">
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -495,21 +625,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="53" column="15" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="107" />
+        <state relative-caret-position="286">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#722#737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" selection-start-line="92" selection-end-line="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#607#622#0" expanded="true" />
           </folding>
         </state>
       </provider>
