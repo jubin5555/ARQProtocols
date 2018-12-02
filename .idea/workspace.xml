@@ -11,12 +11,19 @@
       <change afterPath="$PROJECT_DIR$/../../example/.idea/sbt.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/dataSources.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/sbt.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSC573P2.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.xml" afterDir="false" />
@@ -34,9 +41,16 @@
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/play2_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$SRRReceivePacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$SRRReceivePacket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$checkPacketTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$checkPacketTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Server/SelectiveRepeatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Server/SelectiveRepeatServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Server/Server.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerFiles/rfc1" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFiles/rfc1" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -50,8 +64,9 @@
     <session id="-854198856">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,7 +74,7 @@
           <entry key="class" value="5" />
           <entry key="iml" value="1" />
           <entry key="java" value="19" />
-          <entry key="rfc1" value="26" />
+          <entry key="rfc1" value="27" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
@@ -68,43 +83,30 @@
           <entry key="CLASS" value="5" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="19" />
-          <entry key="PLAIN_TEXT" value="28" />
+          <entry key="PLAIN_TEXT" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="12843" />
+          <entry key="java" value="13040" />
           <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12843" />
+          <entry key="JAVA" value="13040" />
           <entry key="PLAIN_TEXT" value="25" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#607#622#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="89" column="48" lean-forward="true" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+            <state relative-caret-position="73">
+              <caret line="79" column="60" selection-start-line="79" selection-start-column="60" selection-end-line="79" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="765">
+              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,7 +147,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/ServerHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
+            <state relative-caret-position="381">
               <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -157,7 +159,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="1921">
               <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -166,11 +168,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            <state relative-caret-position="-935">
+              <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,7 +199,6 @@
       <find>CURRENTWINDOWPOINTER</find>
       <find>out</find>
       <find>fileName</find>
-      <find>TOTALPACKETLOSSCOUNT</find>
       <find>selectiveRepeatRequest</find>
       <find>CURRENTACKNOWLEDGEDPACKETNUMBER</find>
       <find>tempWindowPointer</find>
@@ -207,6 +208,10 @@
       <find>expectedWindowSize</find>
       <find>writeToFile</find>
       <find>windowSize</find>
+      <find>TOTALPACKETLOSSCOUNT</find>
+      <find>System</find>
+      <find>SRRPACKETSENDTIME</find>
+      <find>RRSendPacketToServer</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\jajubina\Desktop\SOCProject5\project\CSC573P2\src\ServerFiles</dir>
@@ -222,13 +227,13 @@
         <option value="$PROJECT_DIR$/src/POJO/ServerPacket.java" />
         <option value="$PROJECT_DIR$/src/ServerFiles/rfc1" />
         <option value="$PROJECT_DIR$/src/ClientFiles/SampleTextFile_1000kb.txt" />
-        <option value="$PROJECT_DIR$/src/Client/Client.java" />
         <option value="$PROJECT_DIR$/src/Server/ServerHelper.java" />
-        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" />
-        <option value="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" />
         <option value="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" />
+        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" />
+        <option value="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" />
+        <option value="$PROJECT_DIR$/src/Client/Client.java" />
       </list>
     </option>
   </component>
@@ -239,10 +244,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="16" />
+    <option name="x" value="52" />
+    <option name="y" value="15" />
     <option name="width" value="1400" />
-    <option name="height" value="777" />
+    <option name="height" value="778" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -250,63 +255,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="ClientFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
-              <item name="ServerFiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
@@ -348,13 +302,14 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="selectiveRepeatRequest&#9;PSI&#9;JAVA://ClientHelpers.ClientHelper#selectiveRepeatRequest&#10;getData&#9;PSI&#9;JAVA://POJO.ServerPacket#getData&#10;TOTALPACKETLOSSCOUNT&#9;PSI&#9;JAVA://Server.Server#TOTALPACKETLOSSCOUNT" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543644214522" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543794432312" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/org.apache.commons.io.jar.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -432,45 +387,55 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543036048837</updated>
-      <workItem from="1543036052597" duration="98669000" />
+      <workItem from="1543036052597" duration="104441000" />
+      <workItem from="1543704948699" duration="5560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98669000" />
+    <option name="totallyTimeSpent" value="110001000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17785235" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18053691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" weight="0.32907802" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49932885" visible="true" weight="0.4609929" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50067115" side_tool="true" weight="0.50496453" />
-      <window_info anchor="bottom" id="SBT Console" weight="0.32907802" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="SBT Console" order="9" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3248227" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.50496453" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
     <layout-to-restore>
       <window_info id="Image Layers" order="0" />
@@ -522,13 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Downloads/org.apache.commons.io.jar/org.apache.commons.io.jar!/org/apache/commons/io/FileUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8398">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/org.apache.commons.io.jar/org.apache.commons.io.jar!/org/apache/commons/io/FileUtils.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar!/sun/nio/fs/WindowsException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -554,27 +513,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="e#0#3457#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CSC573P2.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
+    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ClientFiles/SampleTextFile_1000kb.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        <state relative-caret-position="493">
+          <caret line="29" column="67" selection-start-line="29" selection-start-column="67" selection-end-line="29" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ClientFiles/SampleTextFile_1000kb.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ServerHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="79" column="60" selection-start-line="79" selection-start-column="60" selection-end-line="79" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/POJO/ServerPacket.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -594,8 +583,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="765">
+          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -603,50 +592,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerFiles/rfc1">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="-4845">
           <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ServerHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#607#622#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="89" column="48" lean-forward="true" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+        <state relative-caret-position="-935">
+          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

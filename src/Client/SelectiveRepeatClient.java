@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import static ClientHelpers.ClientHelper.*;
 
@@ -53,9 +52,11 @@ public class SelectiveRepeatClient {
                 ds= new DatagramSocket();
                 while(true) {
                     long currentTime =System.currentTimeMillis();
-                    if(SRRPACKETSENDTIME.size()>0 && SRRPACKETSENDTIME.containsKey(currentTime)  && (!ACKNOWLEDGEDPACKETLIST.contains(SRRPACKETSENDTIME.get(currentTime))))
+                    if(SRRPACKETSENDTIME.size()>0 && SRRPACKETSENDTIME.containsKey(System.currentTimeMillis())
+                            && (!ACKNOWLEDGEDPACKETLIST.contains(SRRPACKETSENDTIME.get(System.currentTimeMillis()))))
                     {
-                        int packetIDToBeResend = SRRPACKETSENDTIME.get(currentTime);
+                        System.out.println("Inside if loop");
+                        int packetIDToBeResend = SRRPACKETSENDTIME.get(System.currentTimeMillis());
                         SRRPACKETSENDTIME.put(currentTime+400,packetIDToBeResend);
                         byte[] udpPacket = finalPacketFrames(byteArray2[packetIDToBeResend],MSS , packetIDToBeResend);
                         DatagramPacket dp = new DatagramPacket(udpPacket, udpPacket.length, InetAddress.getLocalHost(), serverPortNumber);
@@ -76,17 +77,18 @@ public class SelectiveRepeatClient {
 
     public static void SRRSendPacketToServer(String hostName,int serverPort,String fileName,
                                           int windowSize,int MSS) throws IOException, InterruptedException {
-        Path path = Paths.get("C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ClientFiles\\SampleTextFile_1000kb.txt");
+        Path path = Paths.get("ClientFiles//"+fileName+".txt");
         byteArray = Files.readAllBytes(path);
         byteArray2=chunkArray(byteArray, MSS);
-        InetAddress serverAdress = /*InetAddress.getByName("192.168.0.14")*/ InetAddress.getLocalHost();
-        while (CURRENTWINDOWPOINTER <= byteArray2.length - 1 ) {
+        InetAddress serverAdress = InetAddress.getByName(hostName) ;
+        while (CURRENTWINDOWPOINTER < byteArray2.length - 1 ) {
             if(CURRENTACKNOWLEDGEDPACKETNUMBER<=tempWindowPointer /*&& windowFilled.equals(Boolean.TRUE)*/) {
                 windowFilled = Boolean.FALSE;
                 tempWindowPointer = windowSize + tempWindowPointer;
                 selectiveRepeatRequest(CURRENTWINDOWPOINTER, windowSize, byteArray2, ds, MSS, serverAdress, serverPort);
             }
         }
+        System.out.println("Outside while");
     }
 
 
@@ -100,9 +102,9 @@ public class SelectiveRepeatClient {
                     ds.receive(receivedDatagram);
                     CURRENTACKNOWLEDGEDPACKETNUMBER = Math.max(new BigInteger(sequenceNumberBytes).intValue(), CURRENTACKNOWLEDGEDPACKETNUMBER);
                     ACKNOWLEDGEDPACKETLIST.add(CURRENTACKNOWLEDGEDPACKETNUMBER-1);
-                    System.out.println(ACKNOWLEDGEDPACKETLIST.size() + "The size of ack list.");
+                    /*System.out.println(ACKNOWLEDGEDPACKETLIST.size() + "The size of ack list.");
                     System.out.println(new BigInteger(sequenceNumberBytes).intValue() + ": Received number");
-                    System.out.println(CURRENTACKNOWLEDGEDPACKETNUMBER + ": CurrentAckNumber");
+                    System.out.println(CURRENTACKNOWLEDGEDPACKETNUMBER + ": CurrentAckNumber");*/
                     if(CURRENTACKNOWLEDGEDPACKETNUMBER>CURRENTWINDOWPOINTER) {
                         CURRENTWINDOWPOINTER = CURRENTACKNOWLEDGEDPACKETNUMBER;
                     }
@@ -122,7 +124,7 @@ public class SelectiveRepeatClient {
             windowSize =Integer.parseInt(args[3]);
             MSS=Integer.parseInt(args[4]);
             new SRRReceivePacket().start();
-            System.out.println("besides receiving thread");
+            /*System.out.println("besides receiving thread");*/
             new checkPacketTime().start();
             SRRSendPacketToServer(serverHostName,serverPortNumber,fileName,windowSize,MSS);
         }
@@ -132,7 +134,7 @@ public class SelectiveRepeatClient {
         }
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Total time in minutes : "+ TimeUnit.MILLISECONDS.toMinutes(totalTime));
+        System.out.println("Total time in milliseconds : "+ totalTime);
     }
 
 }

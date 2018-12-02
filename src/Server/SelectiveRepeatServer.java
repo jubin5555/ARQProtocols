@@ -26,8 +26,8 @@ public class SelectiveRepeatServer
 
         DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
-        fileName="C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ServerFiles\\rfc1";
-        FileOutputStream writer = new FileOutputStream(fileName);
+        String modfiedFile2="ServerFiles//"+fileName;
+        FileOutputStream writer = new FileOutputStream(modfiedFile2);
         writer.write(("").getBytes());
         writer.close();
 
@@ -38,8 +38,8 @@ public class SelectiveRepeatServer
             int sequenceNumber =currentPacket.getSequenceNumber();
             //check if the correct packet is received or else dont send an acknowledgment
 
-            System.out.println(sequenceNumber+"received sequencenumber");
-            System.out.println(expectedWindowSize + "expected Window Size.");
+        /*    System.out.println(sequenceNumber+"received sequencenumber");
+            System.out.println(expectedWindowSize + "expected Window Size.");*/
             if(sequenceNumber<expectedWindowSize && ServerHelper.dropPacket(probabilityPacketLoss).equals(Boolean.FALSE)) {
                 byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(sequenceNumber);
                 DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length,
@@ -47,9 +47,9 @@ public class SelectiveRepeatServer
                 TimeUnit.MILLISECONDS.sleep(50);
                 ds.send(dp2);
                 currentWindowData.put(sequenceNumber,currentPacket);
-                System.out.println("currentWindowdata" + currentWindowData.size() +"window Size: "+ windowSize);
+               /* System.out.println("currentWindowdata" + currentWindowData.size() +"window Size: "+ windowSize);*/
                 if(currentWindowData.size()>=windowSize){
-                    System.out.println("Inside if loop");
+                    /*System.out.println("Inside if loop");*/
                     writeToFile();
                 }
             }
@@ -57,7 +57,7 @@ public class SelectiveRepeatServer
                 System.out.println("Packet loss, sequence number:" +sequenceNumber );
                 expectedWindowSize=expectedWindowSize+windowSize;
                 TOTALPACKETLOSSCOUNT=TOTALPACKETLOSSCOUNT+1;
-                System.out.println("TotalPacketLoss: "+ TOTALPACKETLOSSCOUNT);
+                /*System.out.println("TotalPacketLoss: "+ TOTALPACKETLOSSCOUNT);*/
             }
         }
     }

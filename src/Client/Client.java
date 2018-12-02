@@ -27,10 +27,10 @@ public class Client
     public static DatagramSocket ds;
     public static void sendPacketToServer(String hostName,int serverPort,String fileName,
                                           int windowSize,int MSS) throws IOException, InterruptedException {
-        Path path = Paths.get("C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ClientFiles\\SampleTextFile_1000kb.txt");
+        Path path = Paths.get("ClientFiles//"+fileName+".txt");
         byte[] byteArray = Files.readAllBytes(path);
         byte[][] byteArray2=chunkArray(byteArray, MSS);
-        InetAddress serverAdress = /*InetAddress.getByName("192.168.0.14")*/ InetAddress.getLocalHost();
+        InetAddress serverAdress = InetAddress.getByName(hostName);
         while (CURRENTWINDOWPOINTER <= byteArray2.length - 1 && CURRENTACKNOWLEDGEDSTATUS.equals(Boolean.TRUE)) {
             goBackNProtocol(CURRENTWINDOWPOINTER,windowSize,byteArray2,ds,MSS,serverAdress,serverPort);
            /* if(CURRENTACKNOWLEDGEDPACKETNUMBER>CURRENTWINDOWPOINTER) {
@@ -38,6 +38,7 @@ public class Client
               CURRENTWINDOWPOINTER = CURRENTACKNOWLEDGEDPACKETNUMBER;
           }*/
         }
+        System.out.println("The process is over.");
     }
     //A seperate thread to receive packets on the same socket
     public static  class receivePacket extends Thread {

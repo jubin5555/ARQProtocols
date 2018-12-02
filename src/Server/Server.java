@@ -20,7 +20,7 @@ public class Server
 
         DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
-        String fileName="C:\\Users\\jajubina\\Desktop\\SOCProject5\\project\\CSC573P2\\src\\ServerFiles\\rfc1";
+        String fileName="ServerFiles//"+file;
         FileOutputStream writer = new FileOutputStream(fileName);
         writer.write(("").getBytes());
         writer.close();
