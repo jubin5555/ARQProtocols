@@ -102,7 +102,7 @@ public class Client
         }
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Total time in minutes : "+TimeUnit.MILLISECONDS.toMinutes(totalTime));
+        System.out.println("Total time in seconds : "+TimeUnit.MILLISECONDS.toSeconds(totalTime));
     }
 
 }

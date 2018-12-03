@@ -2,10 +2,7 @@ package Server;
 
 import POJO.ServerPacket;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.util.concurrent.TimeUnit;
@@ -14,18 +11,18 @@ public class Server
 {
     public static Integer CURRENTSEQUENCENUMBER=0;
     public static Integer TOTALPACKETLOSSCOUNT=0;
-
+   /* public static PrintWriter writer;*/
 
     public static void receiveData(int portNumber, String file,double probabilityPacketLoss) throws IOException, InterruptedException {
-
         DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
-        String fileName="ServerFiles//"+file;
-        FileOutputStream writer = new FileOutputStream(fileName);
-        writer.write(("").getBytes());
-        writer.close();
+
+        String fileName=System.getProperty("user.dir")+"\\ServerFiles\\"+file.trim()+".txt";
+        System.out.println(fileName);
+        PrintWriter writer= new PrintWriter(fileName,"UTF-8");
 
         while(true) {
+
             DatagramPacket dp = new DatagramPacket(b1, b1.length);
             ds.receive(dp);
             ServerPacket currentPacket = ServerHelper.decipherPacket(b1);
@@ -36,7 +33,7 @@ public class Server
             if(sequenceNumber==CURRENTSEQUENCENUMBER && ServerHelper.dropPacket(probabilityPacketLoss).equals(Boolean.FALSE)) {
                 BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
                 System.out.println(currentPacket.getData());
-                out.write(currentPacket.getData());
+                writer.println(currentPacket.getData());
                 out.close();
                 byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(CURRENTSEQUENCENUMBER);
                 DatagramPacket dp2 = new DatagramPacket(acknowledgmentNumberBytes, acknowledgmentNumberBytes.length, dp.getAddress(), dp.getPort());
@@ -50,6 +47,7 @@ public class Server
                 System.out.println("TotalPacketLoss: "+ TOTALPACKETLOSSCOUNT);
             }
         }
+
     }
     public static void main(String[] args) throws IOException, InterruptedException {
         int portNumber;
@@ -64,7 +62,7 @@ public class Server
             fileName =args[1];
             probability = Double.parseDouble(args[2]);
             receiveData(portNumber,fileName,probability);
-
+            /*writer.close();*/
         }
 
     }

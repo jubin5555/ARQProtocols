@@ -18,12 +18,6 @@
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/sbt.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../example/abc-agents/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSC573P2.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../p5/.idea/dataSources.xml" afterDir="false" />
@@ -40,18 +34,10 @@
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/play2_project_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/play2_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../../project1/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$SRRReceivePacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$SRRReceivePacket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$checkPacketTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient$checkPacketTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Client/SelectiveRepeatClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Server/SelectiveRepeatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/Server/SelectiveRepeatServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/Server/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerFiles/rfc1" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFiles/rfc1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerFiles/rfc1" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,7 +61,7 @@
           <entry key="iml" value="1" />
           <entry key="java" value="19" />
           <entry key="rfc1" value="27" />
-          <entry key="txt" value="2" />
+          <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -83,18 +69,18 @@
           <entry key="CLASS" value="5" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="19" />
-          <entry key="PLAIN_TEXT" value="29" />
+          <entry key="PLAIN_TEXT" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="13040" />
+          <entry key="java" value="13258" />
           <entry key="txt" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13040" />
+          <entry key="JAVA" value="13258" />
           <entry key="PLAIN_TEXT" value="25" />
         </counts>
       </usages-collector>
@@ -117,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            <state relative-caret-position="170">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,8 +157,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-935">
-              <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+            <state relative-caret-position="210">
+              <caret line="104" column="86" selection-start-line="104" selection-start-column="86" selection-end-line="104" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,7 +184,6 @@
       <find>probabilityPacketLoss</find>
       <find>CURRENTWINDOWPOINTER</find>
       <find>out</find>
-      <find>fileName</find>
       <find>selectiveRepeatRequest</find>
       <find>CURRENTACKNOWLEDGEDPACKETNUMBER</find>
       <find>tempWindowPointer</find>
@@ -212,6 +197,7 @@
       <find>System</find>
       <find>SRRPACKETSENDTIME</find>
       <find>RRSendPacketToServer</find>
+      <find>fileName</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\jajubina\Desktop\SOCProject5\project\CSC573P2\src\ServerFiles</dir>
@@ -230,9 +216,9 @@
         <option value="$PROJECT_DIR$/src/Server/ServerHelper.java" />
         <option value="$PROJECT_DIR$/src/ClientHelpers/ClientHelper.java" />
         <option value="$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc1" />
-        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/Server/SelectiveRepeatServer.java" />
         <option value="$PROJECT_DIR$/src/Client/SelectiveRepeatClient.java" />
+        <option value="$PROJECT_DIR$/src/Server/Server.java" />
         <option value="$PROJECT_DIR$/src/Client/Client.java" />
       </list>
     </option>
@@ -261,6 +247,40 @@
             <path>
               <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
               <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="CSC573P2" type="462c0819:PsiDirectoryNode" />
+              <item name="ServerFiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CSC573P2" type="b2602c69:ProjectViewProjectNode" />
@@ -309,7 +329,7 @@
     <property name="SearchEverywhereHistoryKey" value="selectiveRepeatRequest&#9;PSI&#9;JAVA://ClientHelpers.ClientHelper#selectiveRepeatRequest&#10;getData&#9;PSI&#9;JAVA://POJO.ServerPacket#getData&#10;TOTALPACKETLOSSCOUNT&#9;PSI&#9;JAVA://Server.Server#TOTALPACKETLOSSCOUNT" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543794432312" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543800385083" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/org.apache.commons.io.jar.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -388,12 +408,12 @@
       <option name="presentableId" value="Default" />
       <updated>1543036048837</updated>
       <workItem from="1543036052597" duration="104441000" />
-      <workItem from="1543704948699" duration="5560000" />
+      <workItem from="1543704948699" duration="11154000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110001000" />
+    <option name="totallyTimeSpent" value="115595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -406,6 +426,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18053691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -581,16 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerFiles/rfc1">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state>
@@ -603,10 +614,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/CSC573P2/ServerFiles/rfc4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-935">
-          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+        <state relative-caret-position="210">
+          <caret line="104" column="86" selection-start-line="104" selection-start-column="86" selection-end-line="104" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
