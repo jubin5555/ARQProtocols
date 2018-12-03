@@ -55,7 +55,6 @@ public class SelectiveRepeatClient {
                     if(SRRPACKETSENDTIME.size()>0 && SRRPACKETSENDTIME.containsKey(System.currentTimeMillis())
                             && (!ACKNOWLEDGEDPACKETLIST.contains(SRRPACKETSENDTIME.get(System.currentTimeMillis()))))
                     {
-                        System.out.println("Inside if loop");
                         int packetIDToBeResend = SRRPACKETSENDTIME.get(System.currentTimeMillis());
                         SRRPACKETSENDTIME.put(currentTime+400,packetIDToBeResend);
                         byte[] udpPacket = finalPacketFrames(byteArray2[packetIDToBeResend],MSS , packetIDToBeResend);
@@ -88,7 +87,6 @@ public class SelectiveRepeatClient {
                 selectiveRepeatRequest(CURRENTWINDOWPOINTER, windowSize, byteArray2, ds, MSS, serverAdress, serverPort);
             }
         }
-        System.out.println("Outside while");
     }
 
 

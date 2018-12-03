@@ -1,10 +1,7 @@
 package Server;
 import POJO.ServerPacket;
 
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.util.HashMap;
@@ -27,9 +24,10 @@ public class SelectiveRepeatServer
         DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
         String modfiedFile2="ServerFiles//"+fileName;
-        FileOutputStream writer = new FileOutputStream(modfiedFile2);
-        writer.write(("").getBytes());
-        writer.close();
+
+        String tempFileName=System.getProperty("user.dir")+"\\ServerFiles\\"+fileName.trim()+".txt";
+        System.out.println(tempFileName);
+        PrintWriter writer= new PrintWriter(tempFileName,"UTF-8");
 
         while(true) {
             DatagramPacket dp = new DatagramPacket(b1, b1.length);
