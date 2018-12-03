@@ -18,16 +18,15 @@ public class SelectiveRepeatServer
     public static String fileName;
     public static Integer windowSize=0;
     public static Integer expectedWindowSize=0;
+    public static PrintWriter writer;
 
     public static void receiveData(int portNumber,double probabilityPacketLoss) throws IOException, InterruptedException {
 
         DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
-        String modfiedFile2="ServerFiles//"+fileName;
-
         String tempFileName=System.getProperty("user.dir")+"\\ServerFiles\\"+fileName.trim()+".txt";
         System.out.println(tempFileName);
-        PrintWriter writer= new PrintWriter(tempFileName,"UTF-8");
+        writer= new PrintWriter(tempFileName,"UTF-8");
 
         while(true) {
             DatagramPacket dp = new DatagramPacket(b1, b1.length);
@@ -64,7 +63,7 @@ public class SelectiveRepeatServer
         BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
      for(Integer iterator:currentWindowData.keySet()) {
 
-         out.write(currentWindowData.get(iterator).getData().trim());
+         writer.write(currentWindowData.get(iterator).getData().trim());
          out.flush();
      }
         out.close();

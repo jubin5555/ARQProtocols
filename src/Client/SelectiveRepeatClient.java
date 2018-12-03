@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import static ClientHelpers.ClientHelper.*;
 
@@ -132,7 +133,7 @@ public class SelectiveRepeatClient {
         }
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Total time in milliseconds : "+ totalTime);
+        System.out.println("Total time in milliseconds : "+ TimeUnit.MILLISECONDS.toSeconds(totalTime));
     }
 
 }
