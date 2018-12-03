@@ -311,7 +311,7 @@
     <property name="SearchEverywhereHistoryKey" value="sendPacketToServer&#9;PSI&#9;JAVA://Client.Client#sendPacketToServer&#10;false&#9;PSI&#9;JAVA://com.sun.beans.decoder.FalseElementHandler&#10;selectiveRepeatRequest&#9;PSI&#9;JAVA://ClientHelpers.ClientHelper#selectiveRepeatRequest&#10;getData&#9;PSI&#9;JAVA://POJO.ServerPacket#getData&#10;TOTALPACKETLOSSCOUNT&#9;PSI&#9;JAVA://Server.Server#TOTALPACKETLOSSCOUNT" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543815525307" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543816639537" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/org.apache.commons.io.jar.zip!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
