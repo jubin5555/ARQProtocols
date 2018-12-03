@@ -61,7 +61,7 @@ public class SelectiveRepeatClient {
                         byte[] udpPacket = finalPacketFrames(byteArray2[packetIDToBeResend],MSS , packetIDToBeResend);
                         DatagramPacket dp = new DatagramPacket(udpPacket, udpPacket.length, InetAddress.getLocalHost(), serverPortNumber);
                         ds.send(dp);
-                        System.out.println("Packet Loss Timeout: "+ packetIDToBeResend);
+                        /*System.out.println("Packet Loss Timeout: "+ packetIDToBeResend);*/
                     }
                     if(ACKNOWLEDGEDPACKETLIST.size()==windowSize)
                     {

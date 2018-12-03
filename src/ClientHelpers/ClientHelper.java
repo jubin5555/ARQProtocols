@@ -89,6 +89,7 @@ public class ClientHelper {
         else{
             endOfWindow=sendingWindowPointer+windowSize;
         }
+        /*System.out.println("Packet Loss,Sequence Number: "+ sendingWindowPointer);*/
         for(int i=sendingWindowPointer;i<=endOfWindow;i++)
         {
             byte[] udpPacket = finalPacketFrames(dataArray[i],MSS , i);
@@ -114,6 +115,7 @@ public class ClientHelper {
         else{
             endOfWindow=sendingWindowPointer+windowSize;
         }
+      /*  System.out.println("Packet Loss,Sequence Number: "+ sendingWindowPointer);*/
         for(int i=sendingWindowPointer;i<endOfWindow;i++)
         {
             byte[] udpPacket = finalPacketFrames(dataArray[i],MSS , i);

@@ -18,7 +18,7 @@ public class Server
         byte[] b1 =new byte[1024];
 
         String fileName=System.getProperty("user.dir")+"\\ServerFiles\\"+file.trim()+".txt";
-        System.out.println(fileName);
+
         PrintWriter writer= new PrintWriter(fileName,"UTF-8");
 
         while(true) {
@@ -28,11 +28,10 @@ public class Server
             ServerPacket currentPacket = ServerHelper.decipherPacket(b1);
             int sequenceNumber =currentPacket.getSequenceNumber();
             //check if the correct packet is received or else dont send an acknowledgment
-            System.out.println(CURRENTSEQUENCENUMBER + "CurrentEquencenumber");
-            System.out.println(sequenceNumber+"received sequencenumber");
+
             if(sequenceNumber==CURRENTSEQUENCENUMBER && ServerHelper.dropPacket(probabilityPacketLoss).equals(Boolean.FALSE)) {
                 BufferedWriter out = new BufferedWriter(new FileWriter(fileName, true));
-                System.out.println(currentPacket.getData());
+
                 writer.println(currentPacket.getData());
                 out.close();
                 byte[] acknowledgmentNumberBytes = ServerHelper.getAcknowledgmentNumber(CURRENTSEQUENCENUMBER);
@@ -43,8 +42,6 @@ public class Server
             }
             else{
                 System.out.println("Packet loss, sequence number:" +CURRENTSEQUENCENUMBER );
-                TOTALPACKETLOSSCOUNT=TOTALPACKETLOSSCOUNT+1;
-                System.out.println("TotalPacketLoss: "+ TOTALPACKETLOSSCOUNT);
             }
         }
 

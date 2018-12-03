@@ -43,23 +43,22 @@ public class Client
     //A seperate thread to receive packets on the same socket
     public static  class receivePacket extends Thread {
         public void run(){
-                try {
-                   ds= new DatagramSocket();
-                   while(true) {
-                       byte[] sequenceNumberBytes = new byte[4];
-                       DatagramPacket receivedDatagram = new DatagramPacket(sequenceNumberBytes, sequenceNumberBytes.length);
-                       ds.receive(receivedDatagram);
-                       CURRENTACKNOWLEDGEDPACKETNUMBER = Math.max(new BigInteger(sequenceNumberBytes).intValue(), CURRENTACKNOWLEDGEDPACKETNUMBER);
-                       System.out.println(new BigInteger(sequenceNumberBytes).intValue() + ": Received number");
-                       System.out.println(CURRENTACKNOWLEDGEDPACKETNUMBER + ": CurrentAckNumber");
-                        if(CURRENTACKNOWLEDGEDPACKETNUMBER>CURRENTWINDOWPOINTER) {
-             /* printInfoLostPackets(CURRENTACKNOWLEDGEDPACKETNUMBER, CURRENTWINDOWPOINTER + windowSize);*/
-              CURRENTWINDOWPOINTER = CURRENTACKNOWLEDGEDPACKETNUMBER;
-          }
-                   }
-                } catch (IOException e) {
-                    e.printStackTrace();
+            try {
+                ds= new DatagramSocket();
+                while(true) {
+                    byte[] sequenceNumberBytes = new byte[4];
+                    DatagramPacket receivedDatagram = new DatagramPacket(sequenceNumberBytes, sequenceNumberBytes.length);
+                    ds.receive(receivedDatagram);
+                    CURRENTACKNOWLEDGEDPACKETNUMBER = Math.max(new BigInteger(sequenceNumberBytes).intValue(), CURRENTACKNOWLEDGEDPACKETNUMBER);
+
+                    if(CURRENTACKNOWLEDGEDPACKETNUMBER>CURRENTWINDOWPOINTER) {
+                        /* printInfoLostPackets(CURRENTACKNOWLEDGEDPACKETNUMBER, CURRENTWINDOWPOINTER + windowSize);*/
+                        CURRENTWINDOWPOINTER = CURRENTACKNOWLEDGEDPACKETNUMBER;
+                    }
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public static  class checkPacketTime extends Thread {

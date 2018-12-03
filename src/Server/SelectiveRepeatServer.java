@@ -25,7 +25,6 @@ public class SelectiveRepeatServer
         DatagramSocket ds = new DatagramSocket(portNumber);
         byte[] b1 =new byte[1024];
         String tempFileName=System.getProperty("user.dir")+"\\ServerFiles\\"+fileName.trim()+".txt";
-        System.out.println(tempFileName);
         writer= new PrintWriter(tempFileName,"UTF-8");
 
         while(true) {
@@ -51,7 +50,7 @@ public class SelectiveRepeatServer
                 }
             }
             else{
-                System.out.println("Packet loss, sequence number:" +sequenceNumber );
+                /*System.out.println("Packet loss, sequence number:" +sequenceNumber );*/
                 expectedWindowSize=expectedWindowSize+windowSize;
                 TOTALPACKETLOSSCOUNT=TOTALPACKETLOSSCOUNT+1;
                 /*System.out.println("TotalPacketLoss: "+ TOTALPACKETLOSSCOUNT);*/
@@ -85,6 +84,7 @@ public class SelectiveRepeatServer
             windowSize=Integer.parseInt(args[3]);
             expectedWindowSize=Integer.parseInt(args[3]);
             receiveData(portNumber,probability);
+            writer.close();
         }
     }
 }

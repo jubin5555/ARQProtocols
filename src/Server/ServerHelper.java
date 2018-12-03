@@ -54,9 +54,8 @@ public class ServerHelper {
         double number = generator.nextDouble() ;
         //System.out.println("Number "+number);
         if(number<=probability){
-            System.out.println("true");
-            return Boolean.TRUE;}
-            System.out.println("false");
+            return Boolean.TRUE;
+        }
         return Boolean.FALSE;
     }
 }
