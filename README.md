@@ -1,6 +1,4 @@
 # CSC573P2
-Implementing Selective Repeat Request and Go Back N ARQ 
-
 Implementation and statistical analysis of Selective Repeat Request and Go Back N ARQ.
 
 This repository contains sender and receiver programs to transfer a text file 
